@@ -1,0 +1,5 @@
+<div class="container h-100" (click)="selectGif()">
+<div class="row h-100 text-center" *ngIf="selectedGif" >
+  <a class="h-100" href="{{selectedGif.link}}" target="_blank"><img style="height: 100%;width: 100%"  src="{{selectedGif.link}}"></a>
+</div>
+</div>

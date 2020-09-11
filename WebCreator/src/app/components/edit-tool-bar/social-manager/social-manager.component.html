@@ -1,0 +1,35 @@
+<div class="container h-90">
+  <div class="row text-center h-10 font-weight-bold">
+    <div class="col-4">
+      Social
+    </div>
+    <div class="col-4">
+      Edit
+    </div>
+    <div class="col-4">
+      Delete
+    </div>
+  </div>
+  <div class="row text-center h-10 " style="margin-top: 5px"
+       *ngFor="let social of socials;let i = index">
+    <div class="col-4"><a href="{{social.link}}" target="_blank"><img style="width: 25px"
+                                                      src="{{social.image}}"></a></div>
+    <div class="col-4">
+      <i class="material-icons"
+         (click)="editMenu(i)">create</i>
+    </div>
+    <div class="col-4">
+      <i class="material-icons"
+         (click)="deleteSocial(i)">delete</i>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12 text-center">
+    <button class="btn btn-dark"
+            (click)="editMenu()">
+      Add Social
+    </button>
+  </div>
+</div>
+

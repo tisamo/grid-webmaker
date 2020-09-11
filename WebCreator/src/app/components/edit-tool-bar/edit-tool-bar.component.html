@@ -1,0 +1,67 @@
+<div class="toolbar">
+  <button class="btn-dark"
+          (click)="layoutService.addItem()">Add Item
+  </button>
+  <mat-card
+    class="draggable"
+    draggable="true"
+    (dragend)="layoutService.dropItem('header','header')"
+  >
+    header
+  </mat-card>
+  <mat-card
+    class="draggable"
+    draggable="true"
+    (dragend)="layoutService.dropItem('email','email')"
+  >
+    email
+  </mat-card>
+  <mat-card
+    class="draggable"
+    draggable="true"
+    (dragend)="layoutService.dropItem('editSwticher','')"
+  >
+    editSwticher
+  </mat-card>
+
+  <mat-card
+    class="draggable"
+    draggable="true"
+    (dragend)="layoutService.dropItem('projects','')"
+  >
+    Projects
+  </mat-card>
+  <mat-card>
+    <div class="dropdown">
+      <span>Socials</span>
+      <div class="dropdown-content">
+        <mat-card *ngFor="let social of socialNames"
+                  class="draggable text-center"
+                  draggable="true"
+                  (dragend)="layoutService.dropItem('social',social)"
+        >
+          {{social}}
+        </mat-card>
+
+      </div>
+    </div>
+  </mat-card>
+  <mat-card>
+    <div class="dropdown">
+      <span>Socials</span>
+      <div class="dropdown-content">
+        <mat-card *ngFor="let gifs of designService.gifs"
+                  class="draggable text-center"
+                  draggable="true"
+                  (dragend)="layoutService.dropItem('gifs',gifs.name)"
+        >
+          {{gifs.name}}
+        </mat-card>
+
+      </div>
+    </div>
+  </mat-card>
+
+
+</div>
+

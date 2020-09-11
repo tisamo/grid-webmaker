@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>Install Angular</h2>
+<mat-dialog-content class="mat-typography h-100" >
+  <div class="container h-100">
+    <div class="row">
+
+    </div>
+    <div class="row h-25">
+      <div class="col-md-2 black h-100"  *ngFor="let color of colorArray; let i = index">
+        <div class="palette-item" style="background-color:{{color}}" (click)="getColor(i)" ></div>
+      </div>
+    </div>
+  </div>
+  </mat-dialog-content>
+

@@ -1,0 +1,25 @@
+.toolbar {
+  height: 100px;
+  display: flex;
+}
+gridster {
+  display: flex;
+  height: calc(100vh - 115px);
+  flex-direction: column;
+}
+.gridster-item-inner {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+}
+gridster-item{
+  z-index: 1;
+  display: block;
+  height: 92px;
+ margin: 0px!important;
+}
+.bottom-mar{
+  margin-bottom: 0!important;
+}

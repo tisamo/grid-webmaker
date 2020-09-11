@@ -1,0 +1,9 @@
+<div class="container-fluid h-100" [style.background-color]="designService.headerTextColor">
+  <div class="row h-100" *ngIf="!designService.editor" (click)="swtichMode()" routerLink="/grid" >
+    <h1 [style.color]="designService.headerColor"  >To grid</h1>
+  </div>
+  <div class="row h-100" *ngIf="designService.editor" (click)="swtichMode()" routerLink="">
+    <h1 [style.color]="designService.headerColor">To editor</h1>
+  </div>
+
+</div>

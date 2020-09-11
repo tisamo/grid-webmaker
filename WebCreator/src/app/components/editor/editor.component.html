@@ -1,0 +1,82 @@
+<div class="container-fluid h-100">
+  <div class="row h-100">
+    <div class="col-2 text-center "
+         style="height: 40px;"
+         [style.background-color]="designService.headerTextColor"
+         [style.color]="designService.headerColor">
+        <h1 style="margin:0 auto">Tools</h1>
+
+    </div>
+    <div class="col-10 text-center "
+         style="height: 40px;"
+         [style.background-color]="designService.headerTextColor"
+         [style.color]="designService.headerColor">
+      <h1 style="margin:0 auto">Editor</h1>
+
+    </div>
+
+    <div class="col-2 no-pad"
+         style=" cursor: pointer;">
+
+      <div class="d-flex text-center"
+           [style.background-color]="designService.headerTextColor">
+        <div class="flex-even">
+          <app-color-button (colorEmitter)="changeColor($event)"
+                            icon="brush"
+                            [mode]="'header'"
+                            [colorMode]="'text'"></app-color-button>
+        </div>
+        <div class="flex-even">
+          <app-color-button (colorEmitter)="changeColor($event) "
+                            icon="create"
+                            [mode]="'header'"
+                            [colorMode]="'dssd'"></app-color-button>
+        </div>
+      </div>
+      <div class="d-flex text-center">
+        <div class="flex-even">
+        <app-menu-editor [icon]="'settings_input_component'" ></app-menu-editor>
+        </div>
+      </div>
+      <div class="d-flex text-center "
+           (click)="showToolbar()"
+           style="height: 64px;"
+           [style.background-color]="designService.headerTextColor"
+           [style.color]="designService.headerColor">
+        <div class="col-12 vertical-center">
+          <h2 style="margin:0 auto">Show Components</h2>
+        </div>
+      </div>
+      <div class="d-flex text-center" (click)="editorSwtich()">
+        <div class="flex-even" >
+          <mat-card (click)="disableEnableEditor()">
+            {{editorDisabler}}
+          </mat-card>
+        </div>
+      </div>
+      <div class="d-flex text-center" (click)="openHeightOptions()">
+        <div class="flex-even" >
+          <mat-card>
+           Set Container height
+          </mat-card>
+        </div>
+      </div>
+      <div class="d-flex text-center "
+           (click)="setSocials()"
+           style="height: 64px;"
+           [style.background-color]="designService.headerTextColor"
+           [style.color]="designService.headerColor">
+        <div class="col-12 vertical-center">
+          <h2 style="margin:0 auto">Edit Socials</h2>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-10 no-pad h-100">
+
+      <app-edit-tool-bar *ngIf="editTool"></app-edit-tool-bar>
+      <app-gridster-layout *ngIf="filtersLoaded | async"></app-gridster-layout>
+    </div>
+  </div>
+</div>

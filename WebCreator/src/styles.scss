@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.flex-even{
+  flex: 1;
+}
+.no-pad{
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.vertical-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+mat-dialog-container{
+  overflow: hidden!important;
+}

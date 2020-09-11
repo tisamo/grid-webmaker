@@ -1,0 +1,55 @@
+<div class="container h-90"
+     [formGroup]="socialForm">
+  <div class="row">
+    <div class="col-6">
+      <div class="row">
+        <div class="col-12 text-center font-weight-bold">
+          <h1>Pick Social</h1>
+        </div>
+        <div class="col-4"
+             style="margin-bottom: 15%"
+             *ngFor="let social of socials; let i = index">
+          <img src="{{social.image}}"
+               (click)="pickSocial(i)"
+               class="img-fluid">
+        </div>
+      </div>
+
+    </div>
+    <div class="col-6">
+      <div class="row">
+        <div class="col-12 text-center font-weight-bold">
+          <h1>Link</h1>
+        </div>
+        <div class="col-12 text-center font-weight-bold">
+          <p>(Link your site)</p>
+        </div>
+        <div class="col-12 form-group">
+          <input formControlName="link"
+                 class="form-control">
+          <div class="mat-error"
+               *ngIf="socialForm.get('link').errors?.url">Must be an url
+          </div>
+          <div class="mat-error"
+               *ngIf="socialForm.get('image').errors?.required">Pick a Social
+          </div>
+        </div>
+        <div class="col-12 text-center"
+             style="margin-top: 20%">
+          <button class="btn-dark btn"
+                  *ngIf="data===null"
+                  (click)="createSocial()"
+                  [disabled]="!socialForm.valid">Add Social
+          </button>
+          <button class="btn-dark btn"
+                  *ngIf="data!==null"
+                  (click)="modify()"
+                  [disabled]="!socialForm.valid">Modify Social
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

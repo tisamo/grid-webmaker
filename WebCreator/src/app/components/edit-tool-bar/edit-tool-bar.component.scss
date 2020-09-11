@@ -1,0 +1,37 @@
+.toolbar {
+  height: 50px;
+  display: flex;
+}
+gridster {
+  display: flex;
+  height: calc(100vh - 115px);
+  flex-direction: column;
+}
+.gridster-item-inner {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+}
+gridster-item{
+  display: block;
+  height: 92px;
+  margin: 0px!important;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  padding: 12px 16px;
+  z-index: 2;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

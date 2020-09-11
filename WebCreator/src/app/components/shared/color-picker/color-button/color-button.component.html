@@ -1,0 +1,14 @@
+<mat-card [style.background-color]="designService.headerColor ">
+  <mat-card-content>
+    <span class="material-icons"
+          [style.color]="designService.headerTextColor"
+          (click)="openPalette()">
+{{icon}}
+</span>
+
+  </mat-card-content>
+  <mat-card-footer>
+    <p *ngIf="colorMode==='text'">Text Color</p>
+    <p *ngIf="colorMode!=='text'">Item Color</p>
+  </mat-card-footer>
+</mat-card>

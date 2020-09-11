@@ -1,0 +1,64 @@
+<h2 mat-dialog-title
+    class="text-center"
+>Header menu Editor</h2>
+<mat-dialog-content class="mat-typography h-100"
+                    style="margin-top:10px">
+  <div class="container h-100"
+       [formGroup]="menuForm">
+
+    <div class="row text-center font-weight-bold"
+         style="margin-bottom: 10px">
+      <div class="col-md-4 col-5">
+        Name
+      </div>
+      <div class="col-md-4 col-5">
+        routerLink
+      </div>
+      <div class="col-md-2 col-2">
+        edit
+      </div>
+      <div class="col-md-2 col-2">
+        delete
+      </div>
+    </div>
+    <div class="row"
+         *ngFor="let menuPoint of menuItems;let i = index">
+      <div class="col-md-4 col-5 form-group">
+        <input class="form-control"
+               [readOnly]="true"
+               formControlName="{{menuPoint.id}}">
+      </div>
+      <div class="col-md-4 col-5 form-group text-center">
+        <input class="form-control"
+               [readOnly]="true"
+               formControlName="{{menuPoint.id+'router'}}"
+               value="{{menuPoint.routerLink}}">
+      </div>
+      <div class="col-md-2 col-2 text-center">
+
+        <i class="material-icons"
+           (click)="editMenu(i)">create</i>
+      </div>
+      <div class="col-md-2 col-2 text-center"
+      >
+        <i class="material-icons"
+           (click)="deleteMenuItem(i)">delete</i>
+      </div>
+    </div>
+    <div class="row"
+         style="margin-top: 15px;">
+      <div class="col-12 text-center">
+        <button class="btn btn-dark"
+                (click)="openAddNewMenuItemWindow()">
+          Add New Menu Item
+        </button>
+      </div>
+      <div class="col-12 text-center"
+           style="margin-top: 10px">
+
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+
+

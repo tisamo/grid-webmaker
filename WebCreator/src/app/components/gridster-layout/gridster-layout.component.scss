@@ -1,0 +1,22 @@
+.toolbar {
+  height: 100px;
+  display: flex;
+}
+gridster {
+  display: flex;
+  flex-direction: column;
+}
+.gridster-item-inner {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+}
+gridster-item{
+  z-index: 1;
+  display: block;
+  height: 50px;
+  margin: 0px!important;
+}
+

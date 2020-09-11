@@ -1,0 +1,21 @@
+<gridster [options]="options"
+          [style.height.px]="layoutService.height"
+          [style.background]="'url('+layoutService.backGroundImage+')'">
+  <gridster-item
+    *ngFor="let item of layout;let i = index"
+    [item]="item"
+    (dragover)="layoutService.setDropId(item.id)"
+  >
+    <button *ngIf="layoutService.options.resizable.enabled"
+            (click)="layoutService.deleteItem(i)"
+    >
+      Delete Item
+    </button>
+    <ng-container
+      appLayoutItem
+      [componentRef]="layoutService.getComponentRef(item.id)"
+      [input]="layoutService.getInput(item.id)">
+    </ng-container>
+
+  </gridster-item>
+</gridster>

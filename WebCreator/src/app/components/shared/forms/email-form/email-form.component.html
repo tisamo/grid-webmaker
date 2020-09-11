@@ -1,0 +1,35 @@
+<div class="container-fluid h-100">
+
+  <div class="row text-center"
+       [formGroup]="emailForm">
+    <div class="col-md-12"
+         style="margin-bottom: 20px">Contact
+    </div>
+    <div class="col-md-12 form-group ">
+      <input formControlName="name"
+             class="form-control"
+             [(ngModel)]="name"
+             placeholder="Your name">
+    </div>
+    <div class="col-md-12 form-group">
+      <input formControlName="subject"
+             [(ngModel)]="subject"
+             class="form-control"
+             placeholder="Your email">
+    </div>
+    <div class="col-12"
+         style="color: red"
+         *ngIf=" submitted && f.subject.errors.email"><p style="float:left">Must be an email</p></div>
+    <div class="col-md-12 form-group">
+      <input formControlName="text"
+             [(ngModel)]="text"
+             class="form-control"
+             placeholder="Your message">
+    </div>
+    <button type="submit"
+            (click)="onSubmit()"
+            style="margin:0 auto"
+            class="btn-dark">Send
+    </button>
+  </div>
+</div>

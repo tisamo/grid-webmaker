@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row"
+       [formGroup]="projectForm">
+    <div class="col-md-12 text-center"
+         style="margin-bottom: 20px">
+      <h3>Create Project</h3>
+    </div>
+    <div class="col-md-12 form-group">
+      <input formControlName="name"
+             type="text"
+             class="form-control"
+             placeholder="name">
+    </div>
+    <div class="col-md-12 form-group">
+      <input formControlName="image"
+             type="text"
+             class="form-control"
+             placeholder="image">
+    </div>
+    <div class="col-md-12 form-group">
+      <input formControlName="description"
+             type="text"
+             class="form-control"
+             placeholder="description">
+    </div>
+    <div class="col-md-12 text-center" style="margin-top: 10px">
+
+      <button class="btn btn-dark"
+              (click)="openTextEditor()">Create Html
+      </button>
+    </div>
+    <div class="col-md-12 text-center">
+      <button class="btn btn-dark"
+              style="margin-top: 10px"
+              [disabled]="!projectForm.valid"
+              (click)="createProject()">Create
+      </button>
+    </div>
+
+
+
+
+  </div>
+
+</div>

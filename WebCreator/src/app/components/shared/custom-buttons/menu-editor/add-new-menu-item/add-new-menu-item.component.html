@@ -1,0 +1,50 @@
+<div class="container h-100"
+     [formGroup]="newForm">
+  <div class="row">
+    <div class="col-12 form-group">
+      <label class="font-weight-bold">Menu item name</label>
+      <input class="form-control"
+             formControlName="menuName">
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <b>Select route</b>
+    </div>
+    <div class="col-3 text-center"
+         style="margin-top: 10px"
+         *ngFor="let route of routePaths;let i = index">
+      <button class="btn btn-dark text-center"
+              style="width: 100%;height: 100%;"
+              (click)="selectRoute(i)">
+        {{route}}
+      </button>
+    </div>
+  </div>
+  <div class="row"
+       style="margin-top: 40px">
+    <div class="col-12 text-center"  >
+      <button class="btn btn-dark" *ngIf="this.data === null"
+              [disabled]="!newForm.valid"
+              (click)="newItem()">
+        Create menu item
+      </button>
+      <button class="btn btn-dark" *ngIf="this.data !== null"
+              [disabled]="!newForm.valid"
+              (click)="saveItem()">
+        Modify Item
+      </button>
+      <div class="col-12 text-center"
+           style="margin-top: 10px">
+        <button class="btn btn-dark"
+                (click)="cancel()">
+          Back
+        </button>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>

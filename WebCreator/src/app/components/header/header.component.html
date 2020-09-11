@@ -1,0 +1,36 @@
+<mat-toolbar [style.color]="designService.headerTextColor"
+             [style.background-color]="designService.headerColor">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 h-100">
+        <span class="material-icons icon h-100">
+bedtime
+</span>
+
+
+      </div>
+      <div class="col-md-10 ">
+        <div class="d-flex"
+             cdkDropList
+             #todoList="cdkDropList"
+             cdkDropListOrientation="horizontal"
+             [cdkDropListData]="menu"
+
+             [cdkDropListDisabled]="designService.editMode"
+             [cdkDropListEnterPredicate]="false"
+             (cdkDropListDropped)="onDrop($event)">
+          <div class="flex-even"
+               cdkDrag
+               style=" cursor: pointer;"
+               *ngFor="let m of this.designService.headerMenu"
+               (click)="navigate(m.routerLink)"
+               [cdkDragDisabled]="designService.headerEdit">{{m.name}}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</mat-toolbar>
+

@@ -1,0 +1,33 @@
+<div class="container-fluid h-100">
+
+  <div class="row text-center"
+       [formGroup]="heightForm">
+    <div class="col-md-12 font-weight-bold"
+         [style.color]="design.headerTextColor"
+         style="margin-bottom: 20px">Edit Container
+    </div>
+    <div class="col-md-12 form-group ">
+      <input formControlName="height"
+             class="form-control"
+             placeholder="Height">
+    </div>
+
+    <div class="col-md-12 form-group ">
+      <input formControlName="backGround"
+             class="form-control"
+             placeholder="BackGroundImageLink">
+    </div>
+    <div style="color:red;margin:0 auto" *ngIf="heightForm.controls.height.errors">
+      Értéknek 500 és 2000 között kell lennie.
+    </div>
+    <div class="col-md-12">
+      <button type="submit"
+              (click)="setDesign()"
+              [disabled]="!heightForm.valid"
+              style="margin-top:5px"
+              class="btn-dark">Set
+      </button>
+    </div>
+  </div>
+
+</div>
